@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.FBASE_APIKEY,
@@ -9,13 +9,7 @@ const firebaseConfig = {
   appId: process.env.FBASE_APP_ID,
 };
 
-let app;
-
-if (!firebase.apps || firebase.apps.length === 0) {
-  app = firebase.initializeApp(firebaseConfig);
-} else {
-  app = firebase.app();
-}
+const app = initializeApp(firebaseConfig);
 
 const db = app.firestore();
 const auth = app.auth();
