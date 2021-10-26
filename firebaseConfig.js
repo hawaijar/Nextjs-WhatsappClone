@@ -11,8 +11,6 @@ const config = {
   appId: process.env.FBASE_APP_ID,
 };
 
-console.log(config);
-
 const createFirebaseApp = (config = {}) => {
   try {
     return getApp();
@@ -22,9 +20,11 @@ const createFirebaseApp = (config = {}) => {
 };
 
 const app = createFirebaseApp(config);
-const auth = getAuth(app);
-onAuthStateChanged(auth, (user) => {
-  console.log("user:", user);
-});
+// const auth = getAuth(app);
+// onAuthStateChanged(auth, (user) => {
+//   console.log("user:", user);
+// });
 
-const db = getFirestore(app);
+// const db = getFirestore(app);
+
+export default app;
